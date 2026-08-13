@@ -1,0 +1,2252 @@
+{
+    "USA_Running Shoes": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.59,
+                "RMSE": 4.31,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 2.0,
+                "RMSE": 2.75,
+                "MAPE": 69.25
+            }
+        }
+    },
+    "UK_Dumbbell Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.4,
+                "RMSE": 2.76,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.93,
+                "RMSE": 1.25,
+                "MAPE": 51.06
+            }
+        }
+    },
+    "India_Vacuum Cleaner": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.5,
+                "RMSE": 2.79,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.84,
+                "RMSE": 1.07,
+                "MAPE": 41.98
+            }
+        }
+    },
+    "Germany_Dumbbell Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.03,
+                "RMSE": 3.31,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.24,
+                "RMSE": 1.65,
+                "MAPE": 52.62
+            }
+        }
+    },
+    "India_Winter Jacket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.53,
+                "RMSE": 4.6,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.68,
+                "RMSE": 2.69,
+                "MAPE": 53.93
+            }
+        }
+    },
+    "Germany_Blender": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.5,
+                "RMSE": 4.05,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.35,
+                "RMSE": 1.85,
+                "MAPE": 45.19
+            }
+        }
+    },
+    "Pakistan_Yoga Mat": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.97,
+                "RMSE": 3.16,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.33,
+                "RMSE": 1.62,
+                "MAPE": 47.95
+            }
+        }
+    },
+    "UAE_Denim Jeans": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.02,
+                "RMSE": 3.62,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.39,
+                "RMSE": 1.92,
+                "MAPE": 58.81
+            }
+        }
+    },
+    "USA_Lipstick Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.71,
+                "RMSE": 3.03,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.41,
+                "RMSE": 2.01,
+                "MAPE": 64.74
+            }
+        }
+    },
+    "UK_Air Fryer": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.19,
+                "RMSE": 3.91,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.42,
+                "RMSE": 2.0,
+                "MAPE": 49.28
+            }
+        }
+    },
+    "USA_Hair Serum": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.65,
+                "RMSE": 2.96,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.13,
+                "RMSE": 1.68,
+                "MAPE": 56.74
+            }
+        }
+    },
+    "UAE_Running Shoes": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.61,
+                "RMSE": 2.9,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.19,
+                "RMSE": 1.75,
+                "MAPE": 56.83
+            }
+        }
+    },
+    "India_Denim Jeans": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.98,
+                "RMSE": 3.71,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.17,
+                "RMSE": 1.62,
+                "MAPE": 54.21
+            }
+        }
+    },
+    "UK_Blender": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.64,
+                "RMSE": 3.06,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.96,
+                "RMSE": 1.41,
+                "MAPE": 44.34
+            }
+        }
+    },
+    "Pakistan_Vacuum Cleaner": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.73,
+                "RMSE": 2.88,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.86,
+                "RMSE": 1.09,
+                "MAPE": 41.22
+            }
+        }
+    },
+    "Germany_Cotton T-Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.62,
+                "RMSE": 3.15,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.17,
+                "RMSE": 1.43,
+                "MAPE": 67.62
+            }
+        }
+    },
+    "UK_Moisturizing Cream": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.58,
+                "RMSE": 4.4,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.48,
+                "RMSE": 2.33,
+                "MAPE": 48.16
+            }
+        }
+    },
+    "India_Cotton T-Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.77,
+                "RMSE": 3.01,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.26,
+                "RMSE": 1.58,
+                "MAPE": 51.65
+            }
+        }
+    },
+    "Pakistan_Smartphone 128GB": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.81,
+                "RMSE": 3.34,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.27,
+                "RMSE": 1.73,
+                "MAPE": 67.37
+            }
+        }
+    },
+    "Pakistan_Air Fryer": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.97,
+                "RMSE": 3.34,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.1,
+                "RMSE": 1.62,
+                "MAPE": 42.46
+            }
+        }
+    },
+    "Germany_Vacuum Cleaner": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.13,
+                "RMSE": 3.73,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.24,
+                "RMSE": 1.73,
+                "MAPE": 45.57
+            }
+        }
+    },
+    "Pakistan_Blender": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.92,
+                "RMSE": 3.4,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.51,
+                "RMSE": 2.0,
+                "MAPE": 64.04
+            }
+        }
+    },
+    "UK_Perfume": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.08,
+                "RMSE": 3.68,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.63,
+                "RMSE": 2.03,
+                "MAPE": 83.52
+            }
+        }
+    },
+    "USA_4K Smart TV": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.0,
+                "RMSE": 3.8,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.57,
+                "RMSE": 2.24,
+                "MAPE": 76.0
+            }
+        }
+    },
+    "UK_Winter Jacket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.11,
+                "RMSE": 3.71,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.42,
+                "RMSE": 2.06,
+                "MAPE": 61.49
+            }
+        }
+    },
+    "Pakistan_4K Smart TV": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.2,
+                "RMSE": 4.1,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.71,
+                "RMSE": 2.34,
+                "MAPE": 72.94
+            }
+        }
+    },
+    "USA_Dumbbell Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.52,
+                "RMSE": 4.15,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.84,
+                "RMSE": 2.54,
+                "MAPE": 55.19
+            }
+        }
+    },
+    "Germany_Wireless Noise-Canceling Headphones": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.04,
+                "RMSE": 3.74,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 2.26,
+                "RMSE": 3.29,
+                "MAPE": 90.57
+            }
+        }
+    },
+    "UK_Denim Jeans": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.06,
+                "RMSE": 3.56,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.42,
+                "RMSE": 1.89,
+                "MAPE": 57.17
+            }
+        }
+    },
+    "Germany_Smartwatch": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.21,
+                "RMSE": 3.84,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.59,
+                "RMSE": 2.23,
+                "MAPE": 60.83
+            }
+        }
+    },
+    "USA_Wireless Noise-Canceling Headphones": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.03,
+                "RMSE": 3.75,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.68,
+                "RMSE": 2.42,
+                "MAPE": 72.47
+            }
+        }
+    },
+    "UK_Yoga Mat": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.46,
+                "RMSE": 2.66,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.82,
+                "RMSE": 1.0,
+                "MAPE": 47.4
+            }
+        }
+    },
+    "Pakistan_Cotton T-Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.22,
+                "RMSE": 3.97,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.19,
+                "RMSE": 1.81,
+                "MAPE": 48.12
+            }
+        }
+    },
+    "Pakistan_Cycling Helmet": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.64,
+                "RMSE": 3.02,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.01,
+                "RMSE": 1.3,
+                "MAPE": 53.11
+            }
+        }
+    },
+    "UAE_Face Wash": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.93,
+                "RMSE": 3.6,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.61,
+                "RMSE": 2.14,
+                "MAPE": 79.6
+            }
+        }
+    },
+    "Germany_Formal Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.43,
+                "RMSE": 4.38,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.39,
+                "RMSE": 1.8,
+                "MAPE": 52.28
+            }
+        }
+    },
+    "India_Smartphone 128GB": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.35,
+                "RMSE": 3.98,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.32,
+                "RMSE": 1.7,
+                "MAPE": 52.35
+            }
+        }
+    },
+    "India_Gaming Laptop": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.3,
+                "RMSE": 3.92,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.19,
+                "RMSE": 1.68,
+                "MAPE": 52.02
+            }
+        }
+    },
+    "Pakistan_Formal Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.46,
+                "RMSE": 4.15,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.41,
+                "RMSE": 1.92,
+                "MAPE": 44.85
+            }
+        }
+    },
+    "USA_Perfume": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.29,
+                "RMSE": 2.53,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.11,
+                "RMSE": 1.34,
+                "MAPE": 58.01
+            }
+        }
+    },
+    "Germany_Smartphone 128GB": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.07,
+                "RMSE": 3.79,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.47,
+                "RMSE": 1.98,
+                "MAPE": 70.81
+            }
+        }
+    },
+    "USA_Winter Jacket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.95,
+                "RMSE": 3.56,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.46,
+                "RMSE": 2.19,
+                "MAPE": 64.66
+            }
+        }
+    },
+    "UAE_Hair Serum": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.19,
+                "RMSE": 4.3,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.49,
+                "RMSE": 2.25,
+                "MAPE": 58.41
+            }
+        }
+    },
+    "Germany_Yoga Mat": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.84,
+                "RMSE": 3.24,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.26,
+                "RMSE": 1.62,
+                "MAPE": 60.17
+            }
+        }
+    },
+    "UK_Smartwatch": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.22,
+                "RMSE": 3.99,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.43,
+                "RMSE": 1.97,
+                "MAPE": 56.2
+            }
+        }
+    },
+    "UK_4K Smart TV": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.23,
+                "RMSE": 4.04,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.42,
+                "RMSE": 1.92,
+                "MAPE": 59.15
+            }
+        }
+    },
+    "USA_Microwave Oven": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.82,
+                "RMSE": 3.24,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.15,
+                "RMSE": 1.65,
+                "MAPE": 50.72
+            }
+        }
+    },
+    "UAE_Smartphone 128GB": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.4,
+                "RMSE": 4.24,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.5,
+                "RMSE": 2.1,
+                "MAPE": 56.28
+            }
+        }
+    },
+    "Germany_Denim Jeans": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.84,
+                "RMSE": 3.35,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.55,
+                "RMSE": 1.9,
+                "MAPE": 77.81
+            }
+        }
+    },
+    "Pakistan_Microwave Oven": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.74,
+                "RMSE": 3.29,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.91,
+                "RMSE": 1.23,
+                "MAPE": 39.88
+            }
+        }
+    },
+    "UAE_Blender": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.46,
+                "RMSE": 2.85,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.3,
+                "RMSE": 1.6,
+                "MAPE": 74.4
+            }
+        }
+    },
+    "UAE_Cycling Helmet": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.17,
+                "RMSE": 4.11,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.5,
+                "RMSE": 2.66,
+                "MAPE": 57.61
+            }
+        }
+    },
+    "UAE_Winter Jacket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.73,
+                "RMSE": 5.1,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.73,
+                "RMSE": 2.74,
+                "MAPE": 58.51
+            }
+        }
+    },
+    "Pakistan_Coffee Maker": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.67,
+                "RMSE": 3.16,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.18,
+                "RMSE": 1.67,
+                "MAPE": 56.87
+            }
+        }
+    },
+    "Pakistan_Hair Serum": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.61,
+                "RMSE": 2.97,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.12,
+                "RMSE": 1.4,
+                "MAPE": 52.4
+            }
+        }
+    },
+    "Germany_Perfume": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.5,
+                "RMSE": 2.84,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.01,
+                "RMSE": 1.18,
+                "MAPE": 50.5
+            }
+        }
+    },
+    "Germany_Microwave Oven": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.46,
+                "RMSE": 4.49,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.57,
+                "RMSE": 2.17,
+                "MAPE": 59.86
+            }
+        }
+    },
+    "UK_Smartphone 128GB": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.53,
+                "RMSE": 4.39,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.54,
+                "RMSE": 2.18,
+                "MAPE": 54.57
+            }
+        }
+    },
+    "UAE_Formal Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.56,
+                "RMSE": 2.93,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.1,
+                "RMSE": 1.47,
+                "MAPE": 55.4
+            }
+        }
+    },
+    "Pakistan_Face Wash": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.06,
+                "RMSE": 3.94,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.38,
+                "RMSE": 2.09,
+                "MAPE": 55.09
+            }
+        }
+    },
+    "India_Wireless Noise-Canceling Headphones": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.25,
+                "RMSE": 4.0,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.55,
+                "RMSE": 2.04,
+                "MAPE": 64.01
+            }
+        }
+    },
+    "India_Football": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.26,
+                "RMSE": 4.03,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.64,
+                "RMSE": 2.24,
+                "MAPE": 60.27
+            }
+        }
+    },
+    "USA_Gaming Laptop": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.31,
+                "RMSE": 4.0,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.76,
+                "RMSE": 2.41,
+                "MAPE": 66.77
+            }
+        }
+    },
+    "UAE_Cotton T-Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.88,
+                "RMSE": 3.45,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.38,
+                "RMSE": 1.83,
+                "MAPE": 71.06
+            }
+        }
+    },
+    "UAE_Wireless Noise-Canceling Headphones": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.61,
+                "RMSE": 4.57,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.76,
+                "RMSE": 2.57,
+                "MAPE": 60.31
+            }
+        }
+    },
+    "Pakistan_Moisturizing Cream": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.75,
+                "RMSE": 3.27,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.43,
+                "RMSE": 2.08,
+                "MAPE": 78.96
+            }
+        }
+    },
+    "Germany_Running Shoes": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.38,
+                "RMSE": 2.78,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.41,
+                "RMSE": 1.79,
+                "MAPE": 76.18
+            }
+        }
+    },
+    "Pakistan_Football": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.81,
+                "RMSE": 3.29,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.4,
+                "RMSE": 1.87,
+                "MAPE": 68.74
+            }
+        }
+    },
+    "UAE_4K Smart TV": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.03,
+                "RMSE": 3.43,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.56,
+                "RMSE": 1.97,
+                "MAPE": 70.37
+            }
+        }
+    },
+    "India_Blender": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.72,
+                "RMSE": 3.36,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.73,
+                "RMSE": 2.19,
+                "MAPE": 93.46
+            }
+        }
+    },
+    "UAE_Smartwatch": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.75,
+                "RMSE": 3.12,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.08,
+                "RMSE": 1.33,
+                "MAPE": 49.2
+            }
+        }
+    },
+    "Germany_Gaming Laptop": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.7,
+                "RMSE": 4.91,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.94,
+                "RMSE": 3.08,
+                "MAPE": 60.05
+            }
+        }
+    },
+    "India_Cycling Helmet": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.0,
+                "RMSE": 3.42,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.17,
+                "RMSE": 1.41,
+                "MAPE": 50.9
+            }
+        }
+    },
+    "UAE_Perfume": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.8,
+                "RMSE": 3.32,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.21,
+                "RMSE": 1.45,
+                "MAPE": 56.86
+            }
+        }
+    },
+    "India_Moisturizing Cream": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.22,
+                "RMSE": 3.73,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.37,
+                "RMSE": 1.69,
+                "MAPE": 52.09
+            }
+        }
+    },
+    "India_Lipstick Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.33,
+                "RMSE": 4.58,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.71,
+                "RMSE": 2.95,
+                "MAPE": 66.78
+            }
+        }
+    },
+    "UAE_Air Fryer": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.74,
+                "RMSE": 3.17,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.25,
+                "RMSE": 1.66,
+                "MAPE": 70.22
+            }
+        }
+    },
+    "USA_Denim Jeans": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.15,
+                "RMSE": 4.12,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.39,
+                "RMSE": 2.37,
+                "MAPE": 49.46
+            }
+        }
+    },
+    "India_Smartwatch": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.9,
+                "RMSE": 3.52,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.31,
+                "RMSE": 1.86,
+                "MAPE": 61.35
+            }
+        }
+    },
+    "UAE_Gaming Laptop": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.4,
+                "RMSE": 4.2,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.43,
+                "RMSE": 2.1,
+                "MAPE": 56.48
+            }
+        }
+    },
+    "Pakistan_Lipstick Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.73,
+                "RMSE": 2.97,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.18,
+                "RMSE": 1.41,
+                "MAPE": 46.64
+            }
+        }
+    },
+    "UAE_Coffee Maker": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.06,
+                "RMSE": 3.72,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.41,
+                "RMSE": 1.87,
+                "MAPE": 54.27
+            }
+        }
+    },
+    "UAE_Football": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.43,
+                "RMSE": 2.67,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.17,
+                "RMSE": 1.39,
+                "MAPE": 58.77
+            }
+        }
+    },
+    "Germany_Winter Jacket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.22,
+                "RMSE": 4.03,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.5,
+                "RMSE": 2.19,
+                "MAPE": 63.97
+            }
+        }
+    },
+    "India_Coffee Maker": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.85,
+                "RMSE": 3.29,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.48,
+                "RMSE": 1.93,
+                "MAPE": 58.15
+            }
+        }
+    },
+    "USA_Smartphone 128GB": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.9,
+                "RMSE": 4.97,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.77,
+                "RMSE": 2.61,
+                "MAPE": 56.09
+            }
+        }
+    },
+    "Germany_Cycling Helmet": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.49,
+                "RMSE": 2.94,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.98,
+                "RMSE": 1.37,
+                "MAPE": 50.41
+            }
+        }
+    },
+    "India_Hair Serum": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.23,
+                "RMSE": 3.46,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.64,
+                "RMSE": 1.95,
+                "MAPE": 55.07
+            }
+        }
+    },
+    "Germany_Tennis Racket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.21,
+                "RMSE": 3.73,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.22,
+                "RMSE": 1.86,
+                "MAPE": 38.56
+            }
+        }
+    },
+    "India_Yoga Mat": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.0,
+                "RMSE": 3.53,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.57,
+                "RMSE": 2.14,
+                "MAPE": 62.99
+            }
+        }
+    },
+    "UK_Lipstick Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.31,
+                "RMSE": 2.53,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.88,
+                "RMSE": 1.12,
+                "MAPE": 51.06
+            }
+        }
+    },
+    "UAE_Microwave Oven": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.57,
+                "RMSE": 2.79,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.26,
+                "RMSE": 1.59,
+                "MAPE": 65.1
+            }
+        }
+    },
+    "UK_Running Shoes": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.35,
+                "RMSE": 4.55,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.55,
+                "RMSE": 2.62,
+                "MAPE": 56.15
+            }
+        }
+    },
+    "USA_Smartwatch": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.18,
+                "RMSE": 3.8,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.67,
+                "RMSE": 2.18,
+                "MAPE": 73.19
+            }
+        }
+    },
+    "UK_Cycling Helmet": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.3,
+                "RMSE": 4.59,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.55,
+                "RMSE": 2.74,
+                "MAPE": 50.97
+            }
+        }
+    },
+    "UK_Football": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.11,
+                "RMSE": 3.42,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.21,
+                "RMSE": 1.42,
+                "MAPE": 48.99
+            }
+        }
+    },
+    "USA_Yoga Mat": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.5,
+                "RMSE": 4.35,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.63,
+                "RMSE": 2.66,
+                "MAPE": 47.71
+            }
+        }
+    },
+    "USA_Cotton T-Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.67,
+                "RMSE": 3.09,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.31,
+                "RMSE": 1.66,
+                "MAPE": 70.32
+            }
+        }
+    },
+    "Germany_Moisturizing Cream": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.62,
+                "RMSE": 2.87,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.96,
+                "RMSE": 1.15,
+                "MAPE": 45.17
+            }
+        }
+    },
+    "UAE_Dumbbell Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.57,
+                "RMSE": 2.83,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.76,
+                "RMSE": 1.0,
+                "MAPE": 42.97
+            }
+        }
+    },
+    "Pakistan_Perfume": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.08,
+                "RMSE": 3.74,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.22,
+                "RMSE": 2.23,
+                "MAPE": 41.39
+            }
+        }
+    },
+    "UAE_Tennis Racket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.8,
+                "RMSE": 3.48,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.5,
+                "RMSE": 1.97,
+                "MAPE": 70.32
+            }
+        }
+    },
+    "UK_Cotton T-Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.13,
+                "RMSE": 4.01,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.44,
+                "RMSE": 2.11,
+                "MAPE": 55.4
+            }
+        }
+    },
+    "USA_Vacuum Cleaner": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.67,
+                "RMSE": 3.03,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.28,
+                "RMSE": 1.81,
+                "MAPE": 57.56
+            }
+        }
+    },
+    "India_Formal Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.85,
+                "RMSE": 3.32,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.2,
+                "RMSE": 1.57,
+                "MAPE": 54.89
+            }
+        }
+    },
+    "Pakistan_Tennis Racket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.93,
+                "RMSE": 3.41,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.91,
+                "RMSE": 1.3,
+                "MAPE": 42.65
+            }
+        }
+    },
+    "USA_Formal Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.96,
+                "RMSE": 3.43,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.45,
+                "RMSE": 1.98,
+                "MAPE": 56.85
+            }
+        }
+    },
+    "UAE_Yoga Mat": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.94,
+                "RMSE": 3.37,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.06,
+                "RMSE": 1.29,
+                "MAPE": 46.67
+            }
+        }
+    },
+    "USA_Blender": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.53,
+                "RMSE": 2.74,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 0.99,
+                "RMSE": 1.24,
+                "MAPE": 50.09
+            }
+        }
+    },
+    "Germany_4K Smart TV": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.66,
+                "RMSE": 4.76,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.67,
+                "RMSE": 2.7,
+                "MAPE": 59.27
+            }
+        }
+    },
+    "UK_Tennis Racket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.37,
+                "RMSE": 3.91,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.24,
+                "RMSE": 1.92,
+                "MAPE": 40.61
+            }
+        }
+    },
+    "Pakistan_Running Shoes": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.21,
+                "RMSE": 3.92,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.3,
+                "RMSE": 1.97,
+                "MAPE": 51.53
+            }
+        }
+    },
+    "Pakistan_Winter Jacket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.19,
+                "RMSE": 3.8,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.2,
+                "RMSE": 1.68,
+                "MAPE": 49.36
+            }
+        }
+    },
+    "UK_Wireless Noise-Canceling Headphones": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.88,
+                "RMSE": 5.0,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.72,
+                "RMSE": 2.51,
+                "MAPE": 51.9
+            }
+        }
+    },
+    "Pakistan_Denim Jeans": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.26,
+                "RMSE": 4.16,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.49,
+                "RMSE": 2.07,
+                "MAPE": 52.94
+            }
+        }
+    },
+    "Germany_Hair Serum": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.72,
+                "RMSE": 3.0,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.08,
+                "RMSE": 1.33,
+                "MAPE": 50.11
+            }
+        }
+    },
+    "India_Dumbbell Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.82,
+                "RMSE": 3.48,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.19,
+                "RMSE": 1.66,
+                "MAPE": 50.24
+            }
+        }
+    },
+    "USA_Air Fryer": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.93,
+                "RMSE": 3.48,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.23,
+                "RMSE": 1.77,
+                "MAPE": 47.25
+            }
+        }
+    },
+    "India_Running Shoes": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.51,
+                "RMSE": 4.2,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.5,
+                "RMSE": 2.19,
+                "MAPE": 49.75
+            }
+        }
+    },
+    "Pakistan_Smartwatch": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.16,
+                "RMSE": 3.82,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.38,
+                "RMSE": 1.92,
+                "MAPE": 54.05
+            }
+        }
+    },
+    "Germany_Lipstick Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.62,
+                "RMSE": 2.94,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.28,
+                "RMSE": 1.76,
+                "MAPE": 57.83
+            }
+        }
+    },
+    "Pakistan_Gaming Laptop": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.31,
+                "RMSE": 4.43,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.31,
+                "RMSE": 2.5,
+                "MAPE": 48.69
+            }
+        }
+    },
+    "Germany_Coffee Maker": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.38,
+                "RMSE": 2.51,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.11,
+                "RMSE": 1.53,
+                "MAPE": 56.66
+            }
+        }
+    },
+    "UK_Coffee Maker": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.7,
+                "RMSE": 2.91,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.12,
+                "RMSE": 1.42,
+                "MAPE": 50.93
+            }
+        }
+    },
+    "USA_Coffee Maker": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.03,
+                "RMSE": 3.45,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.32,
+                "RMSE": 1.59,
+                "MAPE": 59.46
+            }
+        }
+    },
+    "UK_Formal Shirt": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.89,
+                "RMSE": 3.4,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.11,
+                "RMSE": 1.5,
+                "MAPE": 52.11
+            }
+        }
+    },
+    "USA_Moisturizing Cream": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.44,
+                "RMSE": 4.03,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.43,
+                "RMSE": 2.01,
+                "MAPE": 47.11
+            }
+        }
+    },
+    "India_Microwave Oven": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.86,
+                "RMSE": 3.58,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.27,
+                "RMSE": 1.85,
+                "MAPE": 58.63
+            }
+        }
+    },
+    "Pakistan_Wireless Noise-Canceling Headphones": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.8,
+                "RMSE": 4.76,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.88,
+                "RMSE": 2.76,
+                "MAPE": 55.55
+            }
+        }
+    },
+    "India_Air Fryer": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.85,
+                "RMSE": 3.32,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.33,
+                "RMSE": 1.71,
+                "MAPE": 64.14
+            }
+        }
+    },
+    "India_4K Smart TV": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.65,
+                "RMSE": 4.54,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.71,
+                "RMSE": 2.49,
+                "MAPE": 55.92
+            }
+        }
+    },
+    "UK_Gaming Laptop": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.97,
+                "RMSE": 3.6,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.55,
+                "RMSE": 2.3,
+                "MAPE": 68.74
+            }
+        }
+    },
+    "Pakistan_Dumbbell Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.15,
+                "RMSE": 3.7,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.26,
+                "RMSE": 1.68,
+                "MAPE": 46.16
+            }
+        }
+    },
+    "UK_Hair Serum": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.24,
+                "RMSE": 3.84,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.27,
+                "RMSE": 1.61,
+                "MAPE": 47.64
+            }
+        }
+    },
+    "India_Face Wash": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.05,
+                "RMSE": 3.75,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.15,
+                "RMSE": 1.65,
+                "MAPE": 52.35
+            }
+        }
+    },
+    "UK_Microwave Oven": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.9,
+                "RMSE": 3.31,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.07,
+                "RMSE": 1.36,
+                "MAPE": 54.64
+            }
+        }
+    },
+    "USA_Face Wash": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.05,
+                "RMSE": 3.86,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.35,
+                "RMSE": 1.73,
+                "MAPE": 58.37
+            }
+        }
+    },
+    "UK_Face Wash": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.66,
+                "RMSE": 2.93,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.05,
+                "RMSE": 1.27,
+                "MAPE": 58.87
+            }
+        }
+    },
+    "UAE_Lipstick Set": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.73,
+                "RMSE": 3.22,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.34,
+                "RMSE": 1.75,
+                "MAPE": 69.28
+            }
+        }
+    },
+    "USA_Tennis Racket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.66,
+                "RMSE": 3.1,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.62,
+                "RMSE": 2.03,
+                "MAPE": 78.17
+            }
+        }
+    },
+    "USA_Football": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.56,
+                "RMSE": 3.22,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.49,
+                "RMSE": 2.13,
+                "MAPE": 73.75
+            }
+        }
+    },
+    "India_Perfume": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.95,
+                "RMSE": 3.37,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.48,
+                "RMSE": 2.22,
+                "MAPE": 65.33
+            }
+        }
+    },
+    "USA_Cycling Helmet": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.34,
+                "RMSE": 2.64,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.41,
+                "RMSE": 2.04,
+                "MAPE": 76.33
+            }
+        }
+    },
+    "India_Tennis Racket": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.06,
+                "RMSE": 3.6,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.22,
+                "RMSE": 1.97,
+                "MAPE": 55.53
+            }
+        }
+    },
+    "UK_Vacuum Cleaner": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.97,
+                "RMSE": 3.19,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.04,
+                "RMSE": 1.3,
+                "MAPE": 49.16
+            }
+        }
+    },
+    "Germany_Face Wash": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.79,
+                "RMSE": 3.68,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.45,
+                "RMSE": 2.0,
+                "MAPE": 69.75
+            }
+        }
+    },
+    "UAE_Moisturizing Cream": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.52,
+                "RMSE": 2.86,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.03,
+                "RMSE": 1.24,
+                "MAPE": 48.68
+            }
+        }
+    },
+    "Germany_Football": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.83,
+                "RMSE": 3.35,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.16,
+                "RMSE": 1.39,
+                "MAPE": 62.1
+            }
+        }
+    },
+    "UAE_Vacuum Cleaner": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 2.69,
+                "RMSE": 3.07,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.18,
+                "RMSE": 1.49,
+                "MAPE": 56.95
+            }
+        }
+    },
+    "Germany_Air Fryer": {
+        "best_model": "xgboost",
+        "metrics": {
+            "prophet": {
+                "MAE": 3.11,
+                "RMSE": 3.66,
+                "MAPE": 100.0
+            },
+            "xgboost": {
+                "MAE": 1.35,
+                "RMSE": 2.17,
+                "MAPE": 49.21
+            }
+        }
+    }
+}

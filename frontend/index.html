@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Stock | AI Demand Forecasting</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="ph-fill ph-package icon-logo"></i>
+            <h1>Smart Stock</h1>
+        </div>
+        <div class="status-indicator">
+            <span class="dot pulse"></span>
+            <span class="status-text">AI Engine Online</span>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+
+        <!-- Sidebar Setup -->
+        <aside class="glass-panel sidebar">
+            <h2>Configuration</h2>
+            <form id="forecast-form">
+                <div class="input-group">
+                    <label for="store">Store Location</label>
+                    <select id="store" required></select>
+                </div>
+
+                <div class="input-group">
+                    <label for="product">Product</label>
+                    <select id="product" required></select>
+                </div>
+
+                <div class="input-group">
+                    <label for="horizon">Forecast Horizon (Days)</label>
+                    <input type="number" id="horizon" value="7" min="1" max="30" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="stock">Current Stock</label>
+                    <input type="number" id="stock" value="50" min="0" required>
+                </div>
+
+                <button type="submit" class="btn-primary" id="generate-btn">
+                    <span>Generate Forecast</span>
+                    <div class="spinner hidden" id="loading-spinner"></div>
+                </button>
+            </form>
+        </aside>
+
+        <!-- Main Content Area -->
+        <section class="main-content">
+
+            <!-- Global Metrics -->
+            <div class="overview">
+                <div class="metric glass-panel">
+                    <div class="metric-icon-wrap blue-bg">
+                        <i class="ph ph-cube"></i>
+                    </div>
+                    <div class="metric-info">
+                        <p>Total Products</p>
+                        <h3 id="total-products">--</h3>
+                    </div>
+                </div>
+                <div class="metric glass-panel">
+                    <div class="metric-icon-wrap green-bg">
+                        <i class="ph ph-check-circle"></i>
+                    </div>
+                    <div class="metric-info">
+                        <p>System Health</p>
+                        <h3 style="color: #047857;">Excellent</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Results (Hidden initially) -->
+            <div id="results-container" class="hidden fade-in">
+
+                <!-- Inventory Actions -->
+                <div class="inventory-status-card glass-panel" id="status-card">
+                    <div class="status-header">
+                        <h2><i class="ph ph-shield-check"></i> Inventory Recommendation</h2>
+                        <span id="stock-status-badge" class="badge">--</span>
+                    </div>
+
+                    <div class="metrics-grid">
+                        <div class="mini-metric hover-lift">
+                            <span>Current Stock</span>
+                            <h4 id="res-current-stock">--</h4>
+                        </div>
+                        <div class="mini-metric hover-lift">
+                            <span>Expected Demand</span>
+                            <h4 id="res-expected-demand">--</h4>
+                        </div>
+                        <div class="mini-metric hover-lift">
+                            <span>Safety Stock</span>
+                            <h4 id="res-safety-stock">--</h4>
+                        </div>
+                        <div class="mini-metric highlighted hover-lift">
+                            <span>Recommend Order</span>
+                            <h4 id="res-reorder">--</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alert Box -->
+                <div id="alert-box" class="alert-box hidden">
+                    <i class="ph-fill ph-warning-circle" style="font-size: 1.5rem;"></i>
+                    <div>
+                        <strong>WhatsApp Alert Triggered:</strong> A notification was generated indicating critical
+                        inventory levels for this product.
+                    </div>
+                </div>
+
+                <!-- Chart container -->
+                <div class="glass-panel chart-container">
+                    <h3>Predicted Future Demand</h3>
+                    <canvas id="forecastChart"></canvas>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

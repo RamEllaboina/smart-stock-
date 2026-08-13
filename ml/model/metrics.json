@@ -1,0 +1,1 @@
+{"xgboost": {"MAE": 1.18, "RMSE": 1.7, "MAPE": 51.05}, "baseline": {"MAE": 2.6, "RMSE": 3.29, "MAPE": 91.25}}
