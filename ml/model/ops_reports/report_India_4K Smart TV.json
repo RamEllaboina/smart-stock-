@@ -1,0 +1,33 @@
+{
+    "production_model": "India_4K Smart TV_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.712,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0896,
+        "mae": 4.3415,
+        "rmse": 5.1001,
+        "bias": -1.5186,
+        "residual_mean": -1.5186,
+        "residual_std": 4.8688,
+        "status": "HEALTHY",
+        "degradation": -0.9982
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:07.165936",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

@@ -1,0 +1,33 @@
+{
+    "production_model": "India_Smartphone 128GB_xgboost_v3",
+    "model_status": "DEGRADED",
+    "data_quality_score": 60.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.854,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 1.9121,
+        "mae": 98.5014,
+        "rmse": 103.9129,
+        "bias": -98.5014,
+        "residual_mean": -98.5014,
+        "residual_std": 33.0964,
+        "status": "HIGH_ERROR",
+        "degradation": -0.9547
+    },
+    "retraining_decision": "INVESTIGATE",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:22.843901",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

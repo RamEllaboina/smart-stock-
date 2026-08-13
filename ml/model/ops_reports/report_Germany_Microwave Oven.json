@@ -1,0 +1,33 @@
+{
+    "production_model": "Germany_Microwave Oven_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.741,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0823,
+        "mae": 4.1144,
+        "rmse": 5.315,
+        "bias": -0.0312,
+        "residual_mean": -0.0312,
+        "residual_std": 5.3149,
+        "status": "HEALTHY",
+        "degradation": -0.9983
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:09.304403",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

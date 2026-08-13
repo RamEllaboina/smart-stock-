@@ -1,0 +1,33 @@
+{
+    "production_model": "USA_Running Shoes_prophet_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.885,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0681,
+        "mae": 3.4041,
+        "rmse": 4.2386,
+        "bias": 1.0389,
+        "residual_mean": 1.0389,
+        "residual_std": 4.1093,
+        "status": "HEALTHY",
+        "degradation": -0.9987
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:11.422209",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

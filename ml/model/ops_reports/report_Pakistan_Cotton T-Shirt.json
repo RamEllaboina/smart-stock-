@@ -1,0 +1,33 @@
+{
+    "production_model": "Pakistan_Cotton T-Shirt_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.816,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0882,
+        "mae": 4.6349,
+        "rmse": 5.7092,
+        "bias": -0.6402,
+        "residual_mean": -0.6402,
+        "residual_std": 5.6732,
+        "status": "HEALTHY",
+        "degradation": -0.998
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:44:34.080931",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

@@ -1,0 +1,33 @@
+{
+    "production_model": "UAE_Winter Jacket_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 1.057,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0593,
+        "mae": 2.895,
+        "rmse": 4.1014,
+        "bias": -0.7473,
+        "residual_mean": -0.7473,
+        "residual_std": 4.0327,
+        "status": "HEALTHY",
+        "degradation": -0.9987
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:37.656160",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

@@ -1,0 +1,33 @@
+{
+    "production_model": "UK_Face Wash_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.658,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0875,
+        "mae": 4.3361,
+        "rmse": 5.1074,
+        "bias": -0.8116,
+        "residual_mean": -0.8116,
+        "residual_std": 5.0425,
+        "status": "HEALTHY",
+        "degradation": -0.9976
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:44:51.883425",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

@@ -1,0 +1,33 @@
+{
+    "production_model": "Pakistan_Formal Shirt_xgboost_v3",
+    "model_status": "DEGRADED",
+    "data_quality_score": 60.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.854,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 1.8897,
+        "mae": 99.1982,
+        "rmse": 104.843,
+        "bias": -99.1982,
+        "residual_mean": -99.1982,
+        "residual_std": 33.9376,
+        "status": "HIGH_ERROR",
+        "degradation": -0.9501
+    },
+    "retraining_decision": "INVESTIGATE",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:44:29.199223",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

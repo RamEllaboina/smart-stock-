@@ -2,141 +2,382 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Stock | AI Demand Forecasting</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Phosphor Icons -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Stock | AI Dashboard</title>
+    <!-- Fonts & Icons & Charts -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <i class="ph-fill ph-package icon-logo"></i>
-            <h1>Smart Stock</h1>
-        </div>
-        <div class="status-indicator">
-            <span class="dot pulse"></span>
-            <span class="status-text">AI Engine Online</span>
-        </div>
-    </nav>
-
-    <main class="dashboard">
-
-        <!-- Sidebar Setup -->
-        <aside class="glass-panel sidebar">
-            <h2>Configuration</h2>
-            <form id="forecast-form">
+    <!-- LOGIN MODAL -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="ph-fill ph-package text-accent" style="font-size:3rem;"></i>
+                <h2>Smart Stock</h2>
+                <p class="text-secondary" style="font-size:0.9rem;">Sign in to your enterprise ML dashboard.</p>
+            </div>
+            <form id="login-form">
                 <div class="input-group">
-                    <label for="store">Store Location</label>
-                    <select id="store" required></select>
+                    <label for="username">Corporate Email</label>
+                    <input type="text" id="username" required placeholder="one@gmail.com" />
                 </div>
-
                 <div class="input-group">
-                    <label for="product">Product</label>
-                    <select id="product" required></select>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required />
                 </div>
-
-                <div class="input-group">
-                    <label for="horizon">Forecast Horizon (Days)</label>
-                    <input type="number" id="horizon" value="7" min="1" max="30" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="stock">Current Stock</label>
-                    <input type="number" id="stock" value="50" min="0" required>
-                </div>
-
-                <button type="submit" class="btn-primary" id="generate-btn">
-                    <span>Generate Forecast</span>
-                    <div class="spinner hidden" id="loading-spinner"></div>
+                <button type="submit" class="btn-primary w-full" id="login-btn">
+                    <span id="login-btn-text">Sign In</span>
+                    <div class="spinner hidden" id="login-spinner"
+                        style="width:16px;height:16px;border:2px solid #fff;border-radius:50%;border-top-color:transparent;animation:spin 1s infinite;">
+                    </div>
                 </button>
             </form>
+            <div id="login-error" class="text-error hidden mt-1">Invalid credentials.</div>
+        </div>
+    </div>
+
+    <!-- APP LAYOUT -->
+    <div id="app-layout" class="app-wrapper hidden">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="ph-bold ph-package"></i> SmartStock
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <label for="global-store-selector" class="text-secondary"
+                    style="font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; display: block; padding-left: 0.5rem;">OPERATING
+                    CONTEXT</label>
+                <select id="global-store-selector"
+                    style="width: 100%; padding: 0.8rem; border-radius: 12px; border: 1px solid #e2e8f0; font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer;">
+                    <option value="Germany">Germany Branch</option>
+                </select>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item" data-target="view-dashboard"><i class="ph ph-squares-four"></i> Dashboard</li>
+                <li class="nav-item" data-target="view-forecast"><i class="ph ph-trend-up"></i> AI Forecasting</li>
+                <li class="nav-item active" data-target="view-inventory"><i class="ph-fill ph-cube"></i> Inventory
+                    Health</li>
+                <li class="nav-item" data-target="view-exchange"><i class="ph ph-arrows-left-right"></i> Surplus
+                    Exchange</li>
+                <li class="nav-item" data-target="view-mlops"><i class="ph ph-cpu"></i> MLOps Pipeline</li>
+                <li class="nav-item" data-target="view-anomalies"><i class="ph ph-warning-circle"></i> Data Quality</li>
+                <div class="nav-divider"></div>
+                <li class="nav-item" id="logout-btn" style="margin-top:auto;"><i class="ph ph-sign-out"></i> Log Out
+                </li>
+            </ul>
         </aside>
 
-        <!-- Main Content Area -->
-        <section class="main-content">
+        <!-- MAIN -->
+        <main class="main-area">
 
-            <!-- Global Metrics -->
-            <div class="overview">
-                <div class="metric glass-panel">
-                    <div class="metric-icon-wrap blue-bg">
-                        <i class="ph ph-cube"></i>
-                    </div>
-                    <div class="metric-info">
-                        <p>Total Products</p>
-                        <h3 id="total-products">--</h3>
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="ph ph-magnifying-glass text-secondary"></i>
+                    <input type="text" placeholder="Search across products, ML runs...">
+                </div>
+                <div class="header-actions">
+                    <div class="icon-btn"><i class="ph ph-bell"></i></div>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=User&background=e2e8f0" alt="Avatar">
+                        <div class="u-info">
+                            <h4 id="user-role">Role</h4>
+                            <p id="user-email">email@domain</p>
+                        </div>
                     </div>
                 </div>
-                <div class="metric glass-panel">
-                    <div class="metric-icon-wrap green-bg">
-                        <i class="ph ph-check-circle"></i>
+            </header>
+
+            <div id="views-container" style="flex:1; overflow-y:auto;">
+
+                <!-- 1. DASHBOARD -->
+                <div id="view-dashboard" class="view hidden dashboard-content" style="grid-template-columns: 1fr;">
+                    <div class="card">
+                        <div class="card-header"><span><i class="ph ph-squares-four text-secondary"></i> System
+                                Summary</span></div>
+                        <div style="display:flex; gap:1rem; margin-top:1rem;">
+                            <div class="list-item" style="flex:1">
+                                <div class="col"><span>Registered Stores</span><strong id="dash-stores">...</strong>
+                                </div>
+                            </div>
+                            <div class="list-item" style="flex:1">
+                                <div class="col"><span>Monitored Products</span><strong id="dash-products">...</strong>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="metric-info">
-                        <p>System Health</p>
-                        <h3 style="color: #047857;">Excellent</h3>
+                </div>
+
+                <!-- 2. FORECAST -->
+                <div id="view-forecast" class="view hidden dashboard-content" style="grid-template-columns: 1fr;">
+                    <div class="card">
+                        <div class="card-header"><span><i class="ph ph-trend-up text-secondary"></i> AI Forecasting
+                                Control</span></div>
+                        <form id="forecast-form" style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom: 2rem;">
+                            <select id="store"
+                                style="padding:0.8rem; border-radius:12px; border:1px solid #e2e8f0;"></select>
+                            <select id="product"
+                                style="padding:0.8rem; border-radius:12px; border:1px solid #e2e8f0;"></select>
+                            <input type="number" id="horizon" value="7" placeholder="Horizon (Days)"
+                                style="padding:0.8rem; border-radius:12px; border:1px solid #e2e8f0; width:120px;" />
+                            <input type="number" id="stock" value="50" placeholder="Current Stock"
+                                style="padding:0.8rem; border-radius:12px; border:1px solid #e2e8f0; width:120px;" />
+                            <button class="btn-primary" type="submit" id="generate-btn"><i class="ph ph-lightning"></i>
+                                Execute Model</button>
+                            <button class="btn-outline" type="button" id="clear-btn">Clear</button>
+                        </form>
+
+                        <div id="forecast-empty" class="text-center text-secondary py-2"><i
+                                class="ph ph-magnifying-glass" style="font-size:2rem; opacity:0.5;"></i>
+                            <p>Select constraints to trigger ML pipeline.</p>
+                        </div>
+                        <div id="forecast-content" class="hidden">
+                            <div id="alert-box" class="hidden"
+                                style="background:#fee2e2; color:#b91c1c; padding:1rem; border-radius:12px; margin-bottom:1rem;">
+                                <strong>CRITICAL:</strong> Shortage risk imminent!
+                            </div>
+
+                            <div id="surplus-dialogue" class="hidden"
+                                style="background:#f0fafe; border:1px solid #38bdf8; padding:1.5rem; border-radius:16px; margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:center; box-shadow:0 4px 15px rgba(56,189,248,0.15);">
+                                <div>
+                                    <h3 style="margin-bottom:0.4rem; color:#0284c7;"><i
+                                            class="ph-fill ph-magic-wand"></i> Intelligent Action Suggested</h3>
+                                    <p id="surplus-dialogue-text"
+                                        style="font-size:0.95rem; font-weight:500; color:#0f172a;">You have excess stock
+                                        preventing optimal layout overhead.</p>
+                                </div>
+                                <button class="btn-primary" style="white-space:nowrap;"
+                                    onclick="alert('Item successfully routed to Global Exchange network!')"><i
+                                        class="ph ph-share-network"></i> Automate Exchange</button>
+                            </div>
+
+                            <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
+                                <h3>Engine Recommendation</h3>
+                                <div id="stock-status-badge"></div>
+                            </div>
+                            <div style="display:flex; gap:1rem; margin-bottom:2rem;">
+                                <div class="list-item" style="flex:1">
+                                    <div class="col"><span>Current Stock</span><strong id="res-current-stock"></strong>
+                                    </div>
+                                </div>
+                                <div class="list-item" style="flex:1">
+                                    <div class="col"><span>Forecast Demand</span><strong
+                                            id="res-expected-demand"></strong></div>
+                                </div>
+                                <div class="list-item" style="flex:1">
+                                    <div class="col"><span>Target Stock</span><strong id="res-target-stock"></strong>
+                                    </div>
+                                </div>
+                                <div class="list-item" style="flex:1; background:var(--accent-light);">
+                                    <div class="col"><span>Recommend Order</span><strong id="res-reorder"
+                                            class="text-accent" style="font-size:1.5rem;"></strong></div>
+                                </div>
+                            </div>
+                            <p class="text-secondary" style="font-size:0.9rem; margin-bottom:1.5rem;"><strong>AI
+                                    Reasoning:</strong> <span id="res-reason"></span> (Powered by <span
+                                    id="res-model"></span>)</p>
+                            <div style="height:300px; position:relative;"><canvas id="forecastChart"></canvas></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. INVENTORY HEALTH -->
+                <div id="view-inventory" class="view dashboard-content">
+                    <div class="card" style="padding-bottom: 4rem;">
+                        <div class="card-header">
+                            <span><i class="ph ph-cube text-secondary"></i> AI Inventory Recommendations</span>
+                        </div>
+                        <div class="item-list" id="ai-reorder-list">
+                            <div class="text-center text-secondary py-2">Loading...</div>
+                        </div>
+                        <button class="btn-primary floating-btn"><i class="ph ph-shopping-cart-simple"></i> Finalize
+                            Reorders</button>
+                    </div>
+
+                    <div class="right-col">
+                        <div class="card">
+                            <div class="card-header">
+                                <span><i class="ph ph-arrows-left-right text-secondary"></i> Global Surplus
+                                    Matches</span>
+                            </div>
+                            <div class="item-list" id="surplus-matches-list">
+                                <div class="text-center text-secondary py-2">Loading...</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <span><i class="ph ph-warning-circle text-secondary"></i> Quality Alerts</span>
+                            </div>
+                            <div class="item-list" id="ml-alerts-list">
+                                <div class="text-center text-secondary py-2">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. SURPLUS EXCHANGE -->
+                <div id="view-exchange" class="view hidden dashboard-content" style="grid-template-columns: 1fr;">
+                    <div class="card">
+                        <div class="card-header"><span><i class="ph ph-arrows-left-right text-secondary"></i> Create
+                                Surplus Listing</span></div>
+                        <form id="create-surplus-form"
+                            style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
+                            <select id="exc-store"
+                                style="padding:0.8rem; border-radius:12px; border:1px solid #e2e8f0; width:150px;"></select>
+                            <select id="exc-product"
+                                style="padding:0.8rem; border-radius:12px; border:1px solid #e2e8f0; width:150px;"></select>
+                            <input type="number" id="exc-qty" placeholder="Excess Qty" required
+                                style="padding:0.8rem; border-radius:12px; border:1px solid #e2e8f0; width:120px;" />
+                            <input type="number" step="0.5" id="exc-price" placeholder="Price/Unit ($)" required
+                                style="padding:0.8rem; border-radius:12px; border:1px solid #e2e8f0; width:120px;" />
+                            <button class="btn-primary" type="submit" id="exc-submit-btn"><i class="ph ph-plus"></i>
+                                Post Global Listing</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 5. MLOPS PIPELINE -->
+                <div id="view-mlops" class="view hidden dashboard-content" style="grid-template-columns: 1fr;">
+                    <div class="card">
+                        <div class="card-header">
+                            <span><i class="ph ph-cpu text-secondary"></i> MLOps Monitoring</span>
+                            <div style="display:flex; gap:0.5rem;">
+                                <select id="mlops-store"
+                                    style="padding:0.4rem; border-radius:8px; border:1px solid #e2e8f0;"></select>
+                                <select id="mlops-product"
+                                    style="padding:0.4rem; border-radius:8px; border:1px solid #e2e8f0;"></select>
+                                <button class="btn-primary" id="fetch-mlops-btn"
+                                    style="padding:0.4rem 1rem;">Analyze</button>
+                            </div>
+                        </div>
+                        <div id="mlops-empty" class="text-center text-secondary py-2">
+                            <p>Select context to fetch Model Health metrics.</p>
+                        </div>
+                        <div id="mlops-content" class="hidden">
+                            <div style="display:flex; gap:1rem; margin-bottom:2rem;">
+                                <div class="list-item" style="flex:1">
+                                    <div class="col"><span>Production Model</span><strong id="mlops-model"></strong>
+                                    </div>
+                                </div>
+                                <div class="list-item" style="flex:1">
+                                    <div class="col"><span>Status</span><strong id="mlops-status"></strong></div>
+                                </div>
+                                <div class="list-item" style="flex:1">
+                                    <div class="col"><span>Action</span><strong id="mlops-decision"
+                                            class="text-accent"></strong></div>
+                                </div>
+                            </div>
+
+                            <h3>Performance Decay</h3>
+                            <div style="display:flex; gap:1rem; margin:1rem 0 2rem;">
+                                <div class="list-item" style="flex:1">
+                                    <div class="col"><span>WAPE</span><strong id="ml-wape"></strong></div>
+                                </div>
+                                <div class="list-item" style="flex:1">
+                                    <div class="col"><span>MAE</span><strong id="ml-mae"></strong></div>
+                                </div>
+                                <div class="list-item" style="flex:1">
+                                    <div class="col"><span>Bias</span><strong id="ml-bias"></strong></div>
+                                </div>
+                                <div class="list-item" style="flex:1">
+                                    <div class="col"><span>Degradation</span><strong id="ml-decay"
+                                            class="text-error"></strong></div>
+                                </div>
+                            </div>
+
+                            <div style="display:flex; justify-content:space-between; align-items:center;">
+                                <h3>Data Drift (<span id="ml-feats-drift"></span> / <span id="ml-feats-total"></span>
+                                    Features)</h3>
+                                <button class="btn-outline" id="trigger-retrain-btn"><i
+                                        class="ph ph-arrows-clockwise"></i> Trigger Pipeline Retrain</button>
+                            </div>
+                            <div id="ml-drift-list" class="item-list mt-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. DATA QUALITY -->
+                <div id="view-anomalies" class="view hidden dashboard-content" style="grid-template-columns: 1fr;">
+                    <div class="card">
+                        <div class="card-header">
+                            <span><i class="ph ph-warning-circle text-secondary"></i> Data Integrity Scanner</span>
+                            <button id="refresh-anomalies" class="btn-outline"><i class="ph ph-arrows-clockwise"></i>
+                                Scan DB</button>
+                        </div>
+                        <div style="display:flex; gap:1rem; margin-bottom:2rem;">
+                            <div class="list-item" style="flex:1">
+                                <div class="col"><span>Quality Score</span><strong id="qa-score"
+                                        class="text-accent"></strong></div>
+                            </div>
+                            <div class="list-item" style="flex:1">
+                                <div class="col"><span>Rows Scanned</span><strong id="qa-scanned"></strong></div>
+                            </div>
+                            <div class="list-item" style="flex:1">
+                                <div class="col"><span>Anomalies Flagged</span><strong id="qa-anomalies"
+                                        class="text-warning"></strong></div>
+                            </div>
+                            <div class="list-item" style="flex:1">
+                                <div class="col"><span>Critical Errors</span><strong id="qa-critical"
+                                        class="text-error"></strong></div>
+                            </div>
+                        </div>
+                        <div class="item-list" id="full-anomalies-list">
+                            <div class="text-secondary text-center py-2">Click Scan to detect drift and outliers.</div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Dashboard Results (Hidden initially) -->
-            <div id="results-container" class="hidden fade-in">
-
-                <!-- Inventory Actions -->
-                <div class="inventory-status-card glass-panel" id="status-card">
-                    <div class="status-header">
-                        <h2><i class="ph ph-shield-check"></i> Inventory Recommendation</h2>
-                        <span id="stock-status-badge" class="badge">--</span>
-                    </div>
-
-                    <div class="metrics-grid">
-                        <div class="mini-metric hover-lift">
-                            <span>Current Stock</span>
-                            <h4 id="res-current-stock">--</h4>
-                        </div>
-                        <div class="mini-metric hover-lift">
-                            <span>Expected Demand</span>
-                            <h4 id="res-expected-demand">--</h4>
-                        </div>
-                        <div class="mini-metric hover-lift">
-                            <span>Safety Stock</span>
-                            <h4 id="res-safety-stock">--</h4>
-                        </div>
-                        <div class="mini-metric highlighted hover-lift">
-                            <span>Recommend Order</span>
-                            <h4 id="res-reorder">--</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Alert Box -->
-                <div id="alert-box" class="alert-box hidden">
-                    <i class="ph-fill ph-warning-circle" style="font-size: 1.5rem;"></i>
-                    <div>
-                        <strong>WhatsApp Alert Triggered:</strong> A notification was generated indicating critical
-                        inventory levels for this product.
-                    </div>
-                </div>
-
-                <!-- Chart container -->
-                <div class="glass-panel chart-container">
-                    <h3>Predicted Future Demand</h3>
-                    <canvas id="forecastChart"></canvas>
-                </div>
-            </div>
-
-        </section>
-    </main>
+        </main>
+    </div>
 
     <script src="script.js"></script>
+    <style>
+        .text-right {
+            text-align: right;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .py-2 {
+            padding: 2rem 0;
+        }
+
+        .pt-1 {
+            padding-top: 1rem;
+        }
+
+        .mt-2 {
+            margin-top: 1.5rem;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
 </body>
 
 </html>

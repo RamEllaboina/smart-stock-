@@ -1,0 +1,33 @@
+{
+    "production_model": "Pakistan_Microwave Oven_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.608,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0826,
+        "mae": 4.0963,
+        "rmse": 4.8186,
+        "bias": -0.3602,
+        "residual_mean": -0.3602,
+        "residual_std": 4.8051,
+        "status": "HEALTHY",
+        "degradation": -0.9979
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:05.848576",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

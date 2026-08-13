@@ -1,0 +1,33 @@
+{
+    "production_model": "UAE_Coffee Maker_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.658,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.1027,
+        "mae": 5.2609,
+        "rmse": 6.35,
+        "bias": -1.5083,
+        "residual_mean": -1.5083,
+        "residual_std": 6.1683,
+        "status": "HEALTHY",
+        "degradation": -0.998
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:19.867992",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

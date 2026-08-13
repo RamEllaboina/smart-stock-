@@ -1,0 +1,33 @@
+{
+    "production_model": "USA_Smartwatch_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.946,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0954,
+        "mae": 4.6671,
+        "rmse": 5.5645,
+        "bias": 2.1799,
+        "residual_mean": 2.1799,
+        "residual_std": 5.1197,
+        "status": "HEALTHY",
+        "degradation": -0.9983
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:17.251094",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

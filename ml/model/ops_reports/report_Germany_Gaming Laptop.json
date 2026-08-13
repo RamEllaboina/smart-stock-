@@ -1,0 +1,33 @@
+{
+    "production_model": "Germany_Gaming Laptop_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.931,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0767,
+        "mae": 3.8049,
+        "rmse": 4.3765,
+        "bias": -1.2613,
+        "residual_mean": -1.2613,
+        "residual_std": 4.1908,
+        "status": "HEALTHY",
+        "degradation": -0.9983
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:44:56.471638",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

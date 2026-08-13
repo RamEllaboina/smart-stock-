@@ -5,33 +5,26 @@ import xgboost as xgb
 import json
 import pickle
 from datetime import timedelta
+# pyrefly: ignore [missing-import]
 from prophet import Prophet
 
 def load_router(model_dir):
-    router_path = os.path.join(model_dir, 'router.json')
-    if not os.path.exists(router_path):
-        return {}
-    with open(router_path, 'r') as f:
-        return json.load(f)
-        
-def load_features_list(model_dir):
-    features_path = os.path.join(model_dir, 'features.json')
-    with open(features_path, 'r') as f:
-        return json.load(f)
+    from ml.forecasting import ModelRouter
+    registry_path = os.path.join(model_dir, 'model_registry.json')
+    return ModelRouter(registry_path)
 
 def forecast_demand(store_id, product_id, horizon_days, model_dir):
-    """
-    Generate demand forecast using the routed best model for the product.
-    """
     key = f"{store_id}_{product_id}"
     router = load_router(model_dir)
     
-    if key not in router:
+    # Load base info
+    record = router.registry.get(key)
+    if not record:
         return []
         
-    best_info = router[key]
-    best_model = best_info['best_model']
-    metrics = best_info['metrics'][best_model]
+    m_type = record['model_type']
+    metrics = record['metrics']
+    reliability = metrics.get('Reliability', 'Low')
     
     demo_data_path = os.path.join(model_dir, 'demo_data.csv')
     df = pd.read_csv(demo_data_path)
@@ -44,20 +37,19 @@ def forecast_demand(store_id, product_id, horizon_days, model_dir):
         
     df_sp = df_sp.sort_values('date').reset_index(drop=True)
     last_row = df_sp.iloc[-1].copy()
-    current_date = last_row['date']
+    current_date = pd.to_datetime(last_row['date'])
     
     forecasts = []
     
-    if best_model == 'xgboost':
-        features = load_features_list(model_dir)
-        m_xgb = xgb.XGBRegressor()
-        m_xgb.load_model(os.path.join(model_dir, f'xgb_{key}.json'))
-        
-        current_features = last_row[features].copy()
+    if m_type == 'xgboost':
+        # XGBoost requires iterative autoregressive logic
+        current_features = last_row.to_dict()
         
         for i in range(1, horizon_days + 1):
             future_date = current_date + timedelta(days=i)
+            current_features['date'] = future_date
             
+            # Reconstruct basic calendar features
             current_features['day_of_week'] = future_date.weekday()
             current_features['day_of_month'] = future_date.day
             current_features['week_of_year'] = future_date.isocalendar().week
@@ -65,40 +57,47 @@ def forecast_demand(store_id, product_id, horizon_days, model_dir):
             current_features['quarter'] = (future_date.month - 1) // 3 + 1
             current_features['is_weekend'] = 1 if current_features['day_of_week'] >= 5 else 0
             
-            X = pd.DataFrame([current_features])
-            pred = m_xgb.predict(X)[0]
+            pred_df = pd.DataFrame([current_features])
+            
+            # Predict with fallback
+            preds, _ = router.predict_with_fallback(key, pred_df)
+            pred = preds[0] if preds is not None else 0
             pred = max(0, int(round(pred)))
             
             forecasts.append({
                 'date': future_date.strftime('%Y-%m-%d'),
                 'store_id': store_id,
                 'product_id': product_id,
-                'selected_model': 'XGBoost',
+                'selected_model': m_type,
+                'model_version': record.get('version', 1),
                 'predicted_demand': pred,
-                'MAE': metrics['MAE']
+                'validation_metric': 'WAPE',
+                'validation_score': metrics.get('WAPE', 0),
+                'reliability': reliability
             })
             
+            # Autoregressive shift
             if 'lag_1' in current_features:
                 current_features['lag_1'] = pred 
                 
-    elif best_model == 'prophet':
-        with open(os.path.join(model_dir, f'prophet_{key}.pkl'), 'rb') as f:
-            m_prophet = pickle.load(f)
-            
+    elif m_type == 'prophet' or m_type.startswith('baseline_'):
         future_dates = pd.date_range(start=current_date + timedelta(days=1), periods=horizon_days, freq='D')
-        future_df = pd.DataFrame({'ds': future_dates})
+        future_df = pd.DataFrame({'date': future_dates})
         
-        prophet_forecast = m_prophet.predict(future_df)
+        preds, _ = router.predict_with_fallback(key, future_df)
         
-        for i, row in prophet_forecast.iterrows():
-            pred = max(0, int(round(row['yhat'])))
+        for i, val in enumerate(preds if preds is not None else np.zeros(horizon_days)):
+            pred = max(0, int(round(val)))
             forecasts.append({
-                'date': row['ds'].strftime('%Y-%m-%d'),
+                'date': future_dates[i].strftime('%Y-%m-%d'),
                 'store_id': store_id,
                 'product_id': product_id,
-                'selected_model': 'Prophet',
+                'selected_model': m_type,
+                'model_version': record.get('version', 1),
                 'predicted_demand': pred,
-                'MAE': metrics['MAE']
+                'validation_metric': 'WAPE',
+                'validation_score': metrics.get('WAPE', 0),
+                'reliability': reliability
             })
             
     return forecasts

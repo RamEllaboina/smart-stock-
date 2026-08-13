@@ -1,0 +1,33 @@
+{
+    "production_model": "UK_Hair Serum_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 0,
+        "percentage_drifted": 0.0,
+        "highest_drift_feature": "None",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.0,
+                "status": "LOW"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0648,
+        "mae": 2.9794,
+        "rmse": 3.7551,
+        "bias": -1.1818,
+        "residual_mean": -1.1818,
+        "residual_std": 3.5643,
+        "status": "HEALTHY",
+        "degradation": -0.9984
+    },
+    "retraining_decision": "NO_ACTION",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:44:37.212565",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

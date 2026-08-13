@@ -1,21 +1,31 @@
-# pyrefly: ignore [missing-import]
-from fastapi import FastAPI, HTTPException
-# pyrefly: ignore [missing-import]
-from fastapi.middleware.cors import CORSMiddleware
-# pyrefly: ignore [missing-import]
-from pydantic import BaseModel
-from typing import List, Optional
-import os
 import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-# Add parent directory to path so we can import 'ml' and 'alerts' when running inside the backend folder
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import uuid
+import time
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from backend.core.config import settings
 
-from ml.predict import forecast_demand, calculate_inventory_recommendation
-from alerts.whatsapp import send_whatsapp_alert
+# This replaces the entire old main.py and imports our modular routers
+from backend.api.auth import router as auth_router
+from backend.api.mlops import router as mlops_router
+from backend.api.inventory import router as inv_router
+from backend.api.exchange import router as exchange_router
+ 
+from backend.core.database import engine, Base
+import logging
 
-app = FastAPI(title="Smart Stock API", description="Demand Forecasting & Inventory API")
+Base.metadata.create_all(bind=engine)
 
+app = FastAPI(
+    title=settings.PROJECT_NAME,
+    description="Secure Production API for Smart Stock with Multi-Tenancy and RBAC",
+    version="2.0.0"
+)
+
+# CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -24,98 +34,84 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'ml', 'model')
-
-class ForecastRequest(BaseModel):
-    store_id: str
-    product_id: str
-    horizon_days: int = 7
-    current_stock: int
-    safety_stock: int
-    lead_time_days: int
-
-@app.get("/health")
-def health_check():
-    return {"status": "healthy"}
-
-import pandas as pd
-
-def _get_unique_from_csv(column_name):
-    csv_path = os.path.join(MODEL_DIR, "demo_data.csv")
-    if not os.path.exists(csv_path):
-        return []
-    df = pd.read_csv(csv_path, usecols=[column_name])
-    return sorted(df[column_name].unique().tolist())
-
-@app.get("/products")
-def get_products():
-    try:
-        product_ids = _get_unique_from_csv("product_id")
-        return {"products": [{"id": pid, "name": pid} for pid in product_ids]}
-    except Exception as e:
-        return {"products": []}
-
-@app.get("/stores")
+@app.get("/stores", tags=["Static"])
 def get_stores():
+    import pandas as pd
     try:
-        store_ids = _get_unique_from_csv("store_id")
-        return {"stores": [{"id": sid} for sid in store_ids]}
-    except Exception as e:
-        return {"stores": []}
+        model_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ml', 'model')
+        df = pd.read_csv(os.path.join(model_dir, "demo_data.csv"))
+        stores = df["store_id"].unique().tolist()
+        return {"stores": [{"id": s} for s in stores]}
+    except:
+        return {"stores": [{"id": "store_01"}]}
 
-@app.post("/forecast")
-def get_forecast(req: ForecastRequest):
+@app.get("/products", tags=["Static"])
+def get_products():
+    import pandas as pd
     try:
-        forecasts = forecast_demand(req.store_id, req.product_id, req.horizon_days, MODEL_DIR)
+        model_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ml', 'model')
+        df = pd.read_csv(os.path.join(model_dir, "demo_data.csv"))
+        products = df["product_id"].unique().tolist()
+        return {"products": [{"id": p} for p in products]}
+    except:
+        return {"products": [{"id": "P001"}]}
+
+
+# Request ID & Metrics Middleware
+@app.middleware("http")
+async def add_request_id_and_metrics(request: Request, call_next):
+    request_id = str(uuid.uuid4())
+    request.state.request_id = request_id
+    start_time = time.time()
+    
+    try:
+        response = await call_next(request)
+    except Exception as exc:
+        logging.error(f"Error {request_id}: {exc}")
+        # Standardized Internal error handling happens via Exception handlers, but middleware catches raw
+        raise exc
         
-        if not forecasts:
-            raise HTTPException(status_code=404, detail="No historical data found for this product/store")
-            
-        inventory_rec = calculate_inventory_recommendation(
-            req.current_stock, 
-            req.safety_stock, 
-            req.lead_time_days, 
-            forecasts
-        )
-        
-        # Trigger alert if critical
-        if inventory_rec['status'] in ["CRITICAL", "REORDER NOW"]:
-            send_whatsapp_alert(
-                product_id=req.product_id,
-                current_stock=req.current_stock,
-                forecast_demand=inventory_rec['total_forecast_demand'],
-                safety_stock=req.safety_stock,
-                recommended_reorder=inventory_rec['recommended_reorder']
-            )
-        
-        return {
-            "forecasts": forecasts,
-            "inventory_recommendation": inventory_rec
-        }
-        
+    process_time = time.time() - start_time
+    response.headers["X-Request-ID"] = request_id
+    response.headers["X-Process-Time"] = str(process_time)
+    
+    # Security Headers
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    response.headers["X-Frame-Options"] = "DENY"
+    return response
+
+# Inclusion of Routers
+app.include_router(auth_router)
+app.include_router(mlops_router)
+app.include_router(inv_router)
+app.include_router(exchange_router)
+
+# Health Checks
+@app.get("/health/live", tags=["System"])
+def liveness_check():
+    return {"status": "ok", "service": "Smart Stock API"}
+
+@app.get("/health/ready", tags=["System"])
+def readiness_check():
+    # Attempt DB connection
+    try:
+        with engine.connect() as connection:
+            pass
+        return {"status": "ready", "database": "connected"}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        from fastapi import HTTPException
+        raise HTTPException(status_code=503, detail=f"Database connection failed: {e}")
 
-@app.get("/model/performance")
-def get_model_performance():
-    router_path = os.path.join(MODEL_DIR, "router.json")
-    feature_imp_path = os.path.join(MODEL_DIR, "feature_importance.json")
-    
-    if not os.path.exists(router_path):
-        return {"error": "Models not trained yet"}
-        
-    import json
-    with open(router_path, 'r') as f:
-        router_mapping = json.load(f)
-        
-    # Aggregate or just return the mapping
-    # To keep simple and compatible, we return router info
-    
-    return {
-        "router_mapping": router_mapping
-    }
-
-@app.post("/alerts/test")
-def test_alert(product_id: str = "TestProduct"):
-    res = send_whatsapp_alert(product_id, 10, 50, 15, 55, force_mock=False)
-    return {"status": "Alert triggered", "details": res}
+# Pre-populate dummy users if empty
+@app.on_event("startup")
+def create_initial_users():
+    from backend.core.database import SessionLocal
+    from backend.models.user import User, RoleEnum
+    from backend.core.security import get_password_hash
+    db = SessionLocal()
+    if db.query(User).count() == 0:
+        db.add(User(email="admin@smartstock.local", hashed_password=get_password_hash("admin123"), role=RoleEnum.ADMIN, tenant_id="t1", authorized_stores="*"))
+        db.add(User(email="manager@smartstock.local", hashed_password=get_password_hash("manager123"), role=RoleEnum.MANAGER, tenant_id="t1", authorized_stores="store_01,store_02"))
+        db.add(User(email="staff@smartstock.local", hashed_password=get_password_hash("staff123"), role=RoleEnum.STAFF, tenant_id="t1", authorized_stores="store_01"))
+        db.commit()
+    db.close()

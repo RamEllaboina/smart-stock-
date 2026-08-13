@@ -1,0 +1,33 @@
+{
+    "production_model": "Germany_Coffee Maker_prophet_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.881,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.1001,
+        "mae": 4.9549,
+        "rmse": 6.0362,
+        "bias": -1.2904,
+        "residual_mean": -1.2904,
+        "residual_std": 5.8967,
+        "status": "HEALTHY",
+        "degradation": -0.9976
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:18.610252",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

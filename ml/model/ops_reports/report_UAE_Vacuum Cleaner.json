@@ -1,0 +1,27 @@
+{
+    "production_model": "None",
+    "model_status": "ARCHIVED/MISSING",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 0,
+        "features_with_drift": 0,
+        "percentage_drifted": 0.0,
+        "highest_drift_feature": "None",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": []
+    },
+    "performance": {
+        "wape": 0.0892,
+        "mae": 4.5516,
+        "rmse": 5.7466,
+        "bias": -0.8752,
+        "residual_mean": -0.8752,
+        "residual_std": 5.6795,
+        "status": "HEALTHY",
+        "degradation": 0.0
+    },
+    "retraining_decision": "URGENT_RETRAIN",
+    "problem_products": 1,
+    "last_training_date": "Never",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

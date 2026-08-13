@@ -1,0 +1,33 @@
+{
+    "production_model": "UK_Formal Shirt_xgboost_v3",
+    "model_status": "DEGRADED",
+    "data_quality_score": 60.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 1.041,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 1.9881,
+        "mae": 96.2913,
+        "rmse": 102.7755,
+        "bias": -96.2913,
+        "residual_mean": -96.2913,
+        "residual_std": 35.9276,
+        "status": "HIGH_ERROR",
+        "degradation": -0.9508
+    },
+    "retraining_decision": "INVESTIGATE",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:29.849005",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

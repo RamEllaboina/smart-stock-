@@ -1,0 +1,33 @@
+{
+    "production_model": "USA_Perfume_xgboost_v3",
+    "model_status": "DEGRADED",
+    "data_quality_score": 60.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.658,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 2.2946,
+        "mae": 111.3688,
+        "rmse": 116.7496,
+        "bias": -111.3688,
+        "residual_mean": -111.3688,
+        "residual_std": 35.0352,
+        "status": "HIGH_ERROR",
+        "degradation": -0.9473
+    },
+    "retraining_decision": "INVESTIGATE",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:15.178392",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

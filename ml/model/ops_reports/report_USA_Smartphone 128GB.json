@@ -1,0 +1,33 @@
+{
+    "production_model": "USA_Smartphone 128GB_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 1.068,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0879,
+        "mae": 4.2205,
+        "rmse": 4.9382,
+        "bias": 1.0848,
+        "residual_mean": 1.0848,
+        "residual_std": 4.8176,
+        "status": "HEALTHY",
+        "degradation": -0.998
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:44:54.491461",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

@@ -1,0 +1,48 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.13.3, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\RAM\OneDrive\Documents\Desktop\demux\smart-stock
+plugins: anyio-4.14.1, langsmith-0.4.49
+collected 4 items
+
+tests\test_ops.py .F.F                                                   [100%]
+
+================================== FAILURES ===================================
+__________________________ test_performance_monitor ___________________________
+
+    def test_performance_monitor():
+        config = MonitoringConfig(max_wape=0.15)
+        monitor = PerformanceMonitor(config)
+    
+        y_true = pd.Series([100, 200, 300])
+        y_pred = pd.Series([110, 190, 290])
+    
+        report = monitor.evaluate(y_true, y_pred, ref_wape=0.03)
+    
+        assert report.mae == 10.0
+        # WAPE = 30 / 600 = 0.05
+        assert report.wape == 0.05
+>       assert report.status == "HEALTHY", "Error should be within limits"
+E       AssertionError: Error should be within limits
+E       assert 'PERFORMANCE_DEGRADATION' == 'HEALTHY'
+E         
+E         - HEALTHY
+E         + PERFORMANCE_DEGRADATION
+
+tests\test_ops.py:45: AssertionError
+________________________ test_model_registry_rollback _________________________
+
+tmp_path = WindowsPath('C:/Users/RAM/AppData/Local/Temp/pytest-of-RAM/pytest-3/test_model_registry_rollback0')
+
+    def test_model_registry_rollback(tmp_path):
+        registry = ModelRegistryLite(str(tmp_path))
+    
+        registry.register_model("s1", "p1", "v1", {"description": "first"})
+>       assert registry.get_production_model("s1", "p1")["version_id"] == "v1"
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'version_id'
+
+tests\test_ops.py:88: KeyError
+=========================== short test summary info ===========================
+FAILED tests/test_ops.py::test_performance_monitor - AssertionError: Error sh...
+FAILED tests/test_ops.py::test_model_registry_rollback - KeyError: 'version_id'
+========================= 2 failed, 2 passed in 1.85s =========================

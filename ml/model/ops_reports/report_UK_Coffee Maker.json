@@ -1,0 +1,33 @@
+{
+    "production_model": "UK_Coffee Maker_xgboost_v3",
+    "model_status": "HEALTHY",
+    "data_quality_score": 95.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.855,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 0.0836,
+        "mae": 4.2834,
+        "rmse": 5.25,
+        "bias": 1.0372,
+        "residual_mean": 1.0372,
+        "residual_std": 5.1465,
+        "status": "HEALTHY",
+        "degradation": -0.9977
+    },
+    "retraining_decision": "MONITOR",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:44:36.002283",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}

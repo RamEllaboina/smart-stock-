@@ -1,0 +1,33 @@
+{
+    "production_model": "India_Microwave Oven_xgboost_v3",
+    "model_status": "DEGRADED",
+    "data_quality_score": 60.0,
+    "drift": {
+        "total_features": 1,
+        "features_with_drift": 1,
+        "percentage_drifted": 100.0,
+        "highest_drift_feature": "sales",
+        "prediction_drift_status": "UNKNOWN",
+        "feature_details": [
+            {
+                "feature": "sales",
+                "drift_score": 0.658,
+                "status": "HIGH"
+            }
+        ]
+    },
+    "performance": {
+        "wape": 1.9052,
+        "mae": 95.4685,
+        "rmse": 99.1454,
+        "bias": -95.4685,
+        "residual_mean": -95.4685,
+        "residual_std": 26.7504,
+        "status": "HIGH_ERROR",
+        "degradation": -0.9569
+    },
+    "retraining_decision": "INVESTIGATE",
+    "problem_products": 0,
+    "last_training_date": "2026-08-13T15:45:35.411947",
+    "timestamp": "2026-08-13T19:25:23.521433"
+}
